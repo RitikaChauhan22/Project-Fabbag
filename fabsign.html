@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/fabsign.css">
+</head>
+ <style>
+     #nav_bar{
+        position: sticky;
+    top: 0;
+     }
+ </style>
+<body>
+    <div id="main">
+        <div id="nav_bar"></div>
+
+        <div id="main-cont">
+            <div id="main-cont1">
+                <p id="head">Sign In</p>
+                <iframe id="social_login_frame" title="Social Login Frame"
+                    src="https://social-login.oxiapps.com/widget?site=fabbag-dev.myshopify.com&amp;vt=928360&amp;parenturl=https://www.fabbag.com/account/register"
+                    style="padding-top:0px;margin-bottom:5px;border:0px;height:96px;" scrolling="no"></iframe>
+                
+                    
+                    
+                    <label for="">Your Email Address <em style="color: red;">*</em></label>
+                <form>
+                    <input type="text">
+                </form>
+                    <label for="">Your Password <em style="color: red;">*</em></label>
+                <form>    
+                    <input type="text">
+                </form>    
+                    <div>
+                    <p id="req">*Required Fields</p>
+                     </div>
+                     <br>
+                    <button id="sub_btn" onclick="signIn()">Sign In</button>
+               
+            </div>
+
+        
+
+        </div>
+        <div id="footer"></div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script type="module">
+
+import {navbar} from "./components/navbar.js";
+import {footer} from "./components/footer.js";
+
+let nav_bar = document.getElementById("nav_bar");
+nav_bar.innerHTML = navbar();
+let foot = document.getElementById("footer");
+foot.innerHTML = footer();
+
+</script>
+
+<script>
+    var forms = document.getElementsByTagName("form");
+    forms[0].childNodes[1].addEventListener("focus", changeBorder);
+    forms[0].childNodes[1].addEventListener("blur", repBorder);
+    forms[1].childNodes[1].addEventListener("focus", changeBorder);
+    forms[1].childNodes[1].addEventListener("blur", repBorder);
+ 
+
+var users = document.getElementsByTagName("input");
+let array = ["com", "co", "org", "net", "us"];
+
+function signIn() {
+
+    users[0].value = users[0].value.trim();
+        users[1].value = users[1].value.trim();
+        let flag = false;
+        let len = users[0].value.length;
+        if(len > 9)
+        {
+            let check = "";
+            for(let j = len-1; j>=0; j--)
+            {
+                if(users[0].value[j] == ".")
+                {
+                    var m = j+1;
+                    break;
+                }
+            }
+            for(let a = m; a<len; a++)
+            {
+                check = check + users[0].value[a];
+            }
+            for(let x = 0; x<array.length; x++)
+            {
+                if(check == array[x])
+                {
+                    for(let y = m-4; y>=1; y--)
+                    {
+                        if(users[0].value[y] == "@")
+                        {
+                            flag = true;
+                        }
+                    }
+                }
+            }
+        }
+        if(flag)
+        {
+            if(users[1].value.length > 7)
+            {
+                users[1].value = "";
+                window.location.href = "home.html";
+            }
+            else
+            alert("Password must have atleast 8 character");
+        }
+        else
+        alert("Enter the valid email");
+    }
+
+    function changeBorder(event) {
+        event.target.style.border = "yellow solid 2px"; 
+    }
+    function repBorder(event) {
+        event.target.style.border = "yellow solid 1px"; 
+    }
+
+</script>
+

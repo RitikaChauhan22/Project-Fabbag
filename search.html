@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search-FAB BAG</title>
+    <link rel="shortcut icon" href="//cdn.shopify.com/s/files/1/0052/7551/6995/files/LOGO_32x32.png?v=1548735766" type="image/png">
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+<style>
+
+#sear{
+    height: 450px;
+    width: 1903px;
+}
+.Heading{
+
+margin: auto;
+width: 1170px;
+
+text-align: center;
+margin-top: 70px;
+font-size: 20px;
+    text-align: center!important;
+    font-weight: 500;
+    padding-top: 40px;
+    text-transform: uppercase;
+    border-bottom: 2px double #e5b95f;
+    padding-bottom: 15px;
+    margin-bottom: 31px;
+    font-style: italic;
+}
+#srch-input{
+    margin-left: 380px;
+}
+input{
+    width: 900px;
+    border: 1px double #e5b95f;
+    margin-top: 50px;
+    font-weight: 500;   
+    height: 60px;            
+}
+#search-result{
+    height: 200px;
+    width: 900px;
+    margin-left: 380px;
+    font-style: italic;
+}
+
+</style>
+<body>
+
+    <div id="main-container">
+        <div id="nav_bar"></div>
+
+          <div id="sear">
+
+           <p class="Heading">
+               <span id="sp">
+                SEARCH FOR PRODUCTS ON OUR SITE
+               </span>
+            </p>
+            <div id="srch-input">
+            <input type="text" placeholder="Search product">
+            </div>
+
+             <div id="search-result"></div>
+
+          </div>
+
+
+
+        <div id="footer"></div>
+    </div>
+</body>
+</html>
+<script type="module">
+
+    import {navbar} from "./components/navbar.js";
+    import {footer} from "./components/footer.js"
+    
+    let nav_bar = document.getElementById("nav_bar");
+    nav_bar.innerHTML = navbar();
+    
+    let foot = document.getElementById("footer");
+    foot.innerHTML = footer();
+    
+</script>
+
+<script>
+
+let wall = document.getElementById("search-result");
+let url = "http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybellinemovie.html";
+
+async function getProducts() {
+
+
+let response = await fetch(url);
+
+let data = await response.json();
+console.log("data:", data);
+
+appendProducts(data);
+
+}
+
+function appendProducts(products) {
+
+products.forEach(function (product) {     //7
+
+let main = document.createElement("div");
+
+let title = document.createElement("p");
+title.innerText = product.name;
+
+main.append(title);
+wall.append(main);
+});
+}
+
+getProducts();
+
+</script>
+    

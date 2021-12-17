@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/style.css">
+<style>
+#notif{
+    font-size: 16px; 
+    text-align: center;
+    z-index: 2147483647;
+    display: none;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding: 16px 0;
+    font-size: 16px;
+    text-transform: none;
+}
+#notif-x{
+    font-weight: 700;
+    float: right;
+    height: 0;
+    overflow: visible;
+    margin-right: 2em;
+    cursor: pointer;
+}
+#main-content{
+    display: block;
+    padding-bottom: 50px;
+    min-height: 450px;
+}
+#main_container{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    padding-top: 50px;
+ 
+    width: 1170px;
+    font-family: poppins;
+}
+
+#cart_title{                                                                                                                                                
+    color: #161616;
+    font-size: 30px;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: normal;
+    margin: 0 0 40px;
+    outline: 0;
+    text-align: left;
+}
+#row{
+    margin-right: -15px;
+    margin-left: -15px;
+}
+table{
+    width: 100%;
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: table;
+    border-color: grey;
+    text-indent: initial;
+    font: 14px;
+}
+thead{
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+tr{
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+table th{
+    border-bottom: 1px solid #dfe4e6;
+    padding: 20px;
+}
+#cart table th:first-child{
+    padding: 0;
+}
+#cart table th {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #333;
+    text-align: left;
+}
+th, td{
+    display: table-cell;
+    vertical-align: inherit;
+}
+tbody{
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+table td{
+    border-bottom: 1px solid #dfe4e6;
+    padding: 20px;
+}
+.imag{
+    max-width: 100%;
+    height: auto;
+}
+#cart table tr td.imag{
+    position: relative;
+    text-align: left;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+
+
+</style>
+</head>
+<body>
+    <div id="main">
+       <div id="nav_bar"></div>
+        <div id="nav-bottom">
+            <div id="notif" style="background-color: rgb(115, 23, 15); color: rgb(255, 255, 255); opacity: 0.8; display: block;">
+                <div id="notif-x">
+                    <a href="#" style="float: right;" onclick="sasoHideNotification('1592448279'); return false;">X</a>
+                </div>
+                <p style="background-color: #73170f; color: #ffffff;">Get Free SUGAR Contour De Force Mini Highlighter - 02 Gold Glory worth 399/- with 6 Month Subscription!*</p>
+            </div>
+        </div>
+        <div id="main-content">
+            <div id="main_container">
+                <div id="cart">
+                     <h1 style="font-family: inherit; text-align: left;" id="cart_title">My Cart</h1>
+                     <div id="row">
+                         <form action="">
+                             <table>
+                                 <thead>
+                                     <tr>
+                                         <th id="imgage_product">Product</th>
+                                         <th id="item">&nbsp;</th>
+                                         <th id="qty">Qty</th>
+                                         <th id="price">Price</th>
+                                         <th id="remove"></th>
+                                     </tr>
+                                 </thead>
+                                 <tbody>
+                                     <tr>
+                                         <td id="imag">
+                                            <div id="productImg">
+                                                <a style="cursor: pointer; outline: 0;" href="/products/subscribe?variant=39637030764590">
+                                                    <img src="//cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPage-3_compact.gif?v=1638191014" alt="The X-Must Haves December Fab Bag">
+                                                </a>
+                                            </div>
+                                         </td>
+                                     </tr>
+                                 </tbody>
+                             </table>
+                         </form>
+                     </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            
+        </div>
+    </div>
+</body>
+</html>
+ 
+<script type="module">
+
+import {navbar} from "./components/navbar.js";
+import {footer} from "./components/footer.js"
+
+let nav_bar = document.getElementById("nav_bar");
+nav_bar.innerHTML = navbar();
+
+let foot = document.getElementById("footer");
+foot.innerHTML = footer();
+
+</script>
+
+
+<script>
+
+
+    
+</script>
