@@ -1,10 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="shortcut icon" href="//cdn.shopify.com/s/files/1/0052/7551/6995/files/LOGO_32x32.png?v=1548735766" type="image/png">
+    <title>Your Shopping cart</title>
     <link rel="stylesheet" href="./style/style.css">
 <style>
 #notif{
@@ -120,7 +122,69 @@ table td{
     margin-left: -15px;
 }
 
+#subtotal{
+    background: #f7f7f7;
+}
+#sub-cont{
+    padding: 20px 0 0;
+}
+.t-title{
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #333;
+    text-align: left;
+}
+p{
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin: 0 0 10px;
+    display: inline-block;
+}
+#pric{
+    float: right;
 
+}
+strong{
+    font-weight: 700;
+}
+#subtotal{
+     width: 300px
+   
+}
+#cart1{
+    display: flex;
+    flex-direction: row;
+}
+#chck{
+    padding: 0 25px;
+    text-transform: uppercase;
+    line-height: 34px;
+    height: 36px;
+    letter-spacing: .05em;
+    font-weight: 700;
+    color: #333;
+    border: 1px solid #333;
+    text-decoration: none;
+    background-color: #fff;
+    text-align: center;
+    padding: 0 25px;
+    text-transform: uppercase;
+    line-height: 34px;
+    display: block;
+    border: 1px solid;
+    width: 100%;
+    margin-bottom: 20px;
+    height: 45px;
+    color: #fff;
+    font-weight: 400;
+    border-radius: 4px;
+    background: #e5b95f!important;
+    border-color: #e5b95f!important;
+    margin-top: 60px;
+}
 
 </style>
 </head>
@@ -138,7 +202,9 @@ table td{
         <div id="main-content">
             <div id="main_container">
                 <div id="cart">
+                    
                      <h1 style="font-family: inherit; text-align: left;" id="cart_title">My Cart</h1>
+                     <div id="cart1">
                      <div id="row">
                          <form action="">
                              <table>
@@ -155,16 +221,47 @@ table td{
                                      <tr>
                                          <td id="imag">
                                             <div id="productImg">
-                                                <a style="cursor: pointer; outline: 0;" href="/products/subscribe?variant=39637030764590">
-                                                    <img src="//cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPage-3_compact.gif?v=1638191014" alt="The X-Must Haves December Fab Bag">
-                                                </a>
+                                                
                                             </div>
+                                         </td>
+                                         <td>
+                                             <div id="title_item">
+
+                                             </div>
+                                         </td>
+                                         <td>
+                                             <div id="qtyy">
+
+                                             </div>
+                                         </td>
+                                         <td>
+                                              <div id="pr">
+
+                                              </div>
                                          </td>
                                      </tr>
                                  </tbody>
                              </table>
                          </form>
                      </div>
+                     <div id="subtotal">
+
+                        <div id="sub-cont">
+                            <p class="t-title" data-translate="total_price">Total Price :</p>
+                            <p id="pric">
+                                <span id="total">
+                                    <strong>
+                                        <span class="cart-total">Rs. 599.00</span>
+                                    </strong>
+                                </span>
+                            </p>
+                        
+                        </div> 
+                        <a href="payment&checkout.html">
+                        <button id="chck">Check Out</button>
+                        </a>
+                     </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -191,6 +288,31 @@ foot.innerHTML = footer();
 
 <script>
 
+let img_div = document.getElementById("productImg");
 
-    
+let image = document.createElement("img");
+image.src = "https://cdn.shopify.com/s/files/1/0052/7551/6995/products/Women_sPage-3_compact.gif?v=1638191014";
+image.style.cursor = "pointer";
+
+let name = document.getElementById("title_item");
+
+let p = document.createElement("p");
+p.innerHTML = "The X-Must Haves December Fab Bag 1 month";
+
+let quantity = document.getElementById("qtyy");
+let quant = document.createElement("p");
+quant.innerText = "1";
+
+let price = document.getElementById("pr");
+let pri = document.createElement("p");
+pri.innerHTML = "Rs. 599";
+
+
+img_div.append(image);
+title_item.append(p);
+quantity.append(quant);
+price.append(pri);
+
+
+
 </script>
